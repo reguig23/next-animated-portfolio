@@ -16,7 +16,7 @@ const TransitionProvider = ({ children }) => {
           style={{ transformOrigin: "top" }}
           animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }} 
+          transition={{ duration: 0.4, ease: "easeOut" }} // Durée réduite
         />
         {/* Texte au centre */}
         <motion.div
@@ -24,7 +24,7 @@ const TransitionProvider = ({ children }) => {
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }} 
+          transition={{ duration: 0.4, ease: "easeOut" }} // Durée réduite
         >
           {pathName.substring(1)}
         </motion.div>
@@ -33,9 +33,9 @@ const TransitionProvider = ({ children }) => {
           className="h-screen w-screen fixed bg-primary rounded-t-[100px] bottom-0 z-30"
           style={{ transformOrigin: "bottom" }}
           initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0, transition: { delay: 0.5 } }}
+          animate={{ scaleY: 0 }}
           exit={{ scaleY: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }} 
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }} // Durée réduite avec un léger délai
         />
         {/* Contenus principaux */}
         <div className="h-24">
