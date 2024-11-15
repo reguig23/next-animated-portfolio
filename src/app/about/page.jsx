@@ -19,20 +19,20 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* TEXT CONTAINER */}
-      <motion.div className=" h-[95%]   md:h-[95%] w-[95%] md:bg-jaunePale md:rounded-md md:bg-opacity-90 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-20 lg:gap-32  lg:pr-0 overflow-y-auto ">
+      <div className=" h-[95%]   md:h-[95%] w-[95%] md:bg-jaunePale md:rounded-md md:bg-opacity-90 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-20 lg:gap-32  lg:pr-0 overflow-y-auto ">
         {/* BIOGRAPHY CONTAINER */}
-        <motion.div className="flex flex-col gap-12 justify-center ">
+        <div className="flex flex-col gap-12 justify-center ">
           {/* BIOGRAPHY TITLE */}
-          <motion.h1 className="font-bold text-2xl font-title">Qui je suis ? </motion.h1>
+          <h1 className="font-bold text-2xl font-title">Qui je suis ? </h1>
           {/* BIOGRAPHY DESC */}
-          <motion.p className="text-lg text-bleuFonce font-sans">
+          <p className="text-lg text-bleuFonce font-sans">
             Développeur Full Stack spécialisé en Java, React et Node.js, avec
             une solide expérience en Docker et Kubernetes pour le déploiement.
             Passionné par l&#39;innovation en UX/UI design, j&#39;allie
             esthétique et performance dans mes projets. Mes travaux ont été
             présentés lors de conférences académiques, témoignant de mon
             engagement pour des solutions performantes et centrées utilisateur.
-          </motion.p>
+          </p>
           {/* BIOGRAPHY QUOTE */}
           <span className="italic">
             Merci pour la visite de mon site Voici mon{" "}
@@ -44,28 +44,28 @@ const AboutPage = () => {
               cv
             </a>
           </span>
-        </motion.div>
+        </div>
         {/* SKILLS CONTAINER */}
-        <motion.div
+        <div
           className="flex flex-col gap-3 justify-center p-0 m-0"
           ref={skillRef}
         >
           {/* SKILL TITLE */}
-          <motion.h1 className="font-bold text-2xl font-title ">Compétences</motion.h1>
+          <h1 className="font-bold text-2xl font-title ">Compétences</h1>
 
           {/* SKILL LIST */}
-          <motion.div className="flex flex-col gap-3 md:gap-16 md:flex-wrap justify-center items-center md:flex-row">
+          <div className="flex flex-col gap-3 md:gap-16 md:flex-wrap justify-center items-center md:flex-row">
             {logiciel.map((skillItem) => (
-              <motion.div
+              <div
                 key={skillItem.name}
                 className="flex items-center gap-2 md:gap-4"
               >
                 {/* Image affichée uniquement en mode tablette et desktop */}
-                <motion.div className="hidden md:block">
+                <div className="hidden md:block">
                   <Carte legende={skillItem.name} imageSrc={skillItem.url} />
-                </motion.div>
+                </div>
                 {/* Nom du skill affiché sur tous les écrans */}
-                <motion.span className="text-lg font-medium md:hidden flex flex-row gap-2">
+                <span className="text-lg font-medium md:hidden flex flex-row gap-2">
                   <Image
                     src={skillItem.url}
                     alt="logo"
@@ -74,12 +74,12 @@ const AboutPage = () => {
                     className="justify-center items-center"
                   />{" "}
                   {skillItem.name}
-                </motion.span>
-              </motion.div>
+                </span>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };

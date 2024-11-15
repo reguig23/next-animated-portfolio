@@ -15,7 +15,7 @@ const PortFolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <motion.div className="w-[95%] h-[95%] lg:bg-jaunePale lg:rounded-md lg:shadow-md lg:bg-opacity-90 p-5 mt-10 flex flex-col justify-center  gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
+      <div className="w-[95%] h-[95%] lg:bg-jaunePale lg:rounded-md lg:shadow-md lg:bg-opacity-90 p-5 mt-10 flex flex-col justify-center  gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
         {experiences.map((experience) => (
           <motion.div
             key={experience.id}
@@ -33,9 +33,9 @@ const PortFolioPage = () => {
             <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-2xl"></motion.div>
 
             {/* Content */}
-            <motion.h2 className="relative font-semibold text-xl md:text-2xl lg:text-3xl font-raleway text-gray-100 p-4 z-10">
+            <h2 className="relative font-semibold text-xl md:text-2xl lg:text-3xl font-raleway text-gray-100 p-4 z-10">
               {experience.Name}
-            </motion.h2>
+            </h2>
           </motion.div>
         ))}
         <AnimatePresence>
@@ -46,33 +46,33 @@ const PortFolioPage = () => {
               style={{"backgroundColor": "rgba(224, 219, 204)"}}
             >
               {/* Header */}
-              <motion.div className="flex items-center justify-between w-full mb-4">
-                <motion.h2 className="text-2xl md:text-4xl font-semibold text-gray-800 text-center font-title flex-grow">
+              <div className="flex items-center justify-between w-full mb-4">
+                <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 text-center font-title flex-grow">
                   {expSelect.Name}
-                </motion.h2>
-                <motion.button
+                </h2>
+                <button
                   className="w-8 h-8 md:w-10 md:h-10 bg-red-500 text-lg font-semibold font-raleway text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-colors"
                   onClick={() => setSelectedId(null)}
                 >
                   X
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
 
               {/* Citation */}
-              <motion.div className="w-full h-auto justify-center items-center mb-4">
+              <div className="w-full h-auto justify-center items-center mb-4">
                 <p className="text-center font-bold font-sans text-slate-700">
                   &#34;{expSelect.MyFeedBack}&#34;
                 </p>
-              </motion.div>
+              </div>
 
               {/* Body */}
-              <motion.div className="flex flex-col gap-4 flex-grow overflow-y-auto">
+              <div className="flex flex-col gap-4 flex-grow overflow-y-auto">
                 {/* Info */}
-                <motion.div className="mb-4">
-                  <motion.h5 className="text-lg md:text-xl font-title font-semibold text-gray-700 mb-2">
+                <div className="mb-4">
+                  <h5 className="text-lg md:text-xl font-title font-semibold text-gray-700 mb-2">
                     Informations
-                  </motion.h5>
-                  <motion.div className="text-gray-600 text-sm font-sans md:text-base">
+                  </h5>
+                  <div className="text-gray-600 text-sm font-sans md:text-base">
                     <ul className="list-disc list-inside">
                       <li>
                         <strong>Rôle :</strong> {expSelect.role}
@@ -104,28 +104,28 @@ const PortFolioPage = () => {
                         </li>
                       )}
                     </ul>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
 
                 {/* Missions */}
-                <motion.div className="mb-4">
-                  <motion.h5 className="text-lg md:text-xl  font-title font-semibold text-gray-700 mb-2">
+                <div className="mb-4">
+                  <h5 className="text-lg md:text-xl  font-title font-semibold text-gray-700 mb-2">
                     Missions
-                  </motion.h5>
-                  <motion.div className="text-gray-600 text-sm md:text-base">
+                  </h5>
+                  <div className="text-gray-600 text-sm md:text-base">
                     <ul className="list-disc list-inside space-y-1">
                       {expSelect.missions.map((mission, index) => (
                         <li key={index} className="font-sans ">{mission}</li>
                       ))}
                     </ul>
-                  </motion.div>
-                </motion.div>
+                  </div>
+                </div>
                 
                 {/* Photos */}
-                <motion.div className="flex flex-col gap-4 h-[70vh]">
-                  <motion.h5 className="text-lg md:text-xl font-title font-semibold text-gray-700">
+                <div className="flex flex-col gap-4 h-[70vh]">
+                  <h5 className="text-lg md:text-xl font-title font-semibold text-gray-700">
                     Photos
-                  </motion.h5>
+                  </h5>
                   {expSelect.isConfidentiel && (
                     <motion.div className="w-full h-full flex items-center font-sans justify-center  text-gray-500 italic text-center rounded-lg p-4">
                       &#34;Ce projet est soumis à des restrictions de
@@ -138,12 +138,12 @@ const PortFolioPage = () => {
                       <Carrousel images={expSelect.img} />
                     </motion.div>
                   )}
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.div>
+      </div>
     </motion.div>
   );
 };
