@@ -80,21 +80,15 @@ const Navbar = () => {
       </div>
       {/* LOGO */}
       <div className="md:hidden lg:flex xl:w-1/3 xl:justify-center ">
-        <Link
-          href="/"
-          className="text-sm bg-charkoal rounded-md p-1 font-semibold flex items-center justify-center"
-        >
-          <span className="text-white mr-1">Rakar</span>
-          <span className="w-12 h-8 rounded bg-white text-charkoal flex items-center justify-center">.dev</span>
-        </Link>
+        
       </div>
       {/* SOCIAL */}
       <div className="hidden md:flex gap-4 w-1/3">
             <Link href={"https://github.com/reguig23"}>
-                <Image src="/github.png" alt="" width={24} height={24}/>
+                <Image src="/github.png" alt="" width={30} height={30}/>
             </Link>
             <Link href={"https://www.linkedin.com/in/ilyes-reguig/"}>
-                <Image src="/linkedin.png" alt="" width={24} height={24}/>
+                <Image src="/linkedin.png" alt="" width={30} height={30}/>
             </Link>
       </div>
       {/* RESPONSIVE MENU */}
@@ -108,17 +102,17 @@ const Navbar = () => {
           <motion.div 
             variants={topVariants} 
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-charkoal rounded origin-left"> 
+            className="w-10 h-1 bg-primary rounded origin-left"> 
           </motion.div>
           <motion.div 
             variants={centerVariants} 
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-charkoal rounded"> 
+            className="w-10 h-1 bg-primary rounded"> 
           </motion.div>
           <motion.div 
             variants={bottomVariants} 
             animate={open ? "opened" : "closed"}
-            className="w-10 h-1 bg-charkoal rounded origin-left"> 
+            className="w-10 h-1 bg-primary rounded origin-left"> 
           </motion.div>
         </button>
         {/* MENU LIST */}
@@ -127,7 +121,7 @@ const Navbar = () => {
           variants={listVariants} 
           initial="closed"
           animate="opened"
-          className="absolute top-0 left-0 w-screen h-screen bg-charkoal text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
+          className="absolute top-0 left-0 w-screen h-screen bg-primary text-white flex flex-col items-center justify-center gap-8 text-4xl z-40">
             {links.map((link) => (
               <motion.div className="" variants={listItemVariants} key={link.title}>
               <NavLink link={link} />

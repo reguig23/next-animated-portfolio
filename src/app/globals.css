@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: url('/img/backgroundMobile.png');
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    background-image: url('/img/backgroundPortfolio.png');
+  }
+}
+
 .example-container {
   width: 100%; /* Utilise toute la largeur de la div parente */
   height: 100%; /* Utilise toute la hauteur de la div parente */
