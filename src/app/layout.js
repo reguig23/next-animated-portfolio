@@ -5,12 +5,11 @@ import TransitionProvider from "@/components/transitionProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Lama Dev Portfolio App",
+  title: "Portfolio Ilyes Reguig",
   description: "Portfolio",
 };
 
 export default function RootLayout({ children }) {
-  console.log(inter.className);
   return (
     <html lang="en" className=" w-full h-full ">
       <head>
