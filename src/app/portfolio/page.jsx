@@ -1,48 +1,66 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Experience from "@/data/experience";
 import { Carrousel } from "@/components/carrousel";
 
-const PortFolioPage = () => {
+
+
+const PortfolioPage = () => {
   const experiences = Experience;
-  const [selectedId, setSelectedId] = React.useState(null);
-  const expSelect = experiences.filter((exp) => exp.id == selectedId)[0];
+  const [selectedId, setSelectedId] = useState(null);
+
+  var expSelect = experiences.filter((experience)=>(experience.id== selectedId))[0];
+
+
+  
+
   return (
     <motion.div
-      className="h-full w-full flex justify-center items-center  "
+      className="h-full w-full flex justify-center items-center"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="w-[95%] h-[95%] lg:bg-jaunePale lg:rounded-md lg:shadow-md lg:bg-opacity-90 p-5 mt-10 flex flex-col justify-center  gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
-        {experiences.map((experience) => (
-          <motion.div
-            key={experience.id}
-            layoutId={experience.id}
-            className="w-full md:w-1/2 lg:w-1/4 h-40 md:h-56 lg:h-72 flex flex-col justify-end rounded-2xl overflow-hidden shadow-lg m-2 relative"
-            style={{
-              backgroundImage: `url(${experience.backgroundImg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-            }}
-            onClick={() => setSelectedId(experience.id)}
-          >
-            {/* Background blur */}
-            <motion.div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-2xl"></motion.div>
-
-            {/* Content */}
-            <h2 className="relative font-semibold text-xl md:text-2xl lg:text-3xl font-raleway text-gray-100 p-4 z-10">
-              {experience.Name}
-            </h2>
-          </motion.div>
-        ))}
+      <div className="w-[95%] h-[95%] lg:bg-jaunePale lg:rounded-md lg:shadow-md lg:bg-opacity-90 p-5 mt-10 flex flex-col justify-center gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
+        
+            {experiences.map((experience) => (
+              <div
+                key={experience.id}
+                layoutId={experience.id}
+                className="w-full md:w-1/2 lg:w-1/4 h-40 md:h-56 lg:h-72 flex flex-col justify-end rounded-2xl overflow-hidden shadow-lg m-2 relative"
+                style={{
+                  backgroundImage: `url(${experience.backgroundImg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                onClick={() => setSelectedId(experience.id)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  opacity: { duration: 0.6, ease: "easeInOut" }, // Animation d'opacité
+                }}
+              >
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-2xl"></div>
+                <h2 className="relative font-semibold text-xl md:text-2xl lg:text-3xl font-raleway text-gray-100 p-4 z-[4]">
+                  {experience.Name}
+                </h2>
+              </div>
+            ))}
+         
+        
+        
+        {/* Selected Experience Modal */}
         <AnimatePresence>
           {selectedId && (
             <motion.div
+              key={expSelect.id}
+              exit={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
               layoutId={selectedId}
-              className="w-full md:w-[80%] h-full md:h-[90%] z-10 flex flex-col rounded-2xl shadow-lg absolute left-0 md:left-[10%] top-0 md:top-[5%] p-4 md:p-6 overflow-y-auto"
+              className="w-full md:w-[80%] h-[95%] md:h-[90%] z-10 flex flex-col rounded-2xl shadow-lg absolute left-0 md:left-[10%]  md:top-[5%] p-4 md:p-6 "
               style={{"backgroundColor": "rgba(224, 219, 204)"}}
             >
               {/* Header */}
@@ -148,4 +166,4 @@ const PortFolioPage = () => {
   );
 };
 
-export default PortFolioPage;
+export default PortfolioPage;

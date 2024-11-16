@@ -1,7 +1,8 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./navbar";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const TransitionProvider = ({ children }) => {
@@ -9,35 +10,30 @@ const TransitionProvider = ({ children }) => {
 
   return (
     <AnimatePresence mode="wait">
-      <div key={pathName} className="w-full h-full">
-        {/* Bande supérieure */}
+      <div
+        key={pathName}
+        className="w-screen h-screen bg-gradient-to-b "
+      >
         <motion.div
           className="h-screen w-screen fixed bg-primary rounded-b-[100px] z-40"
-          style={{ transformOrigin: "top" }}
-          animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut" }} // Durée réduite
+          animate={{ height: "0vh" }}
+          exit={{ height: "140vh" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         />
-        {/* Texte au centre */}
         <motion.div
-          className="fixed m-auto top-0 bottom-0 left-0 right-0 font-title text-white text-8xl cursor-default z-50 w-fit h-fit pointer-events-none"
+          className="fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-8xl cursor-default z-50 w-fit h-fit pointer-events-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }} // Durée réduite
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          {pathName.substring(1)}
+          {pathName.substring(1).toUpperCase()}
         </motion.div>
-        {/* Bande inférieure */}
         <motion.div
           className="h-screen w-screen fixed bg-primary rounded-t-[100px] bottom-0 z-30"
-          style={{ transformOrigin: "bottom" }}
-          initial={{ scaleY: 1 }}
-          animate={{ scaleY: 0 }}
-          exit={{ scaleY: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }} // Durée réduite avec un léger délai
+          initial={{ height: "140vh" }}
+          animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
-        {/* Contenus principaux */}
         <div className="h-24">
           <Navbar />
         </div>

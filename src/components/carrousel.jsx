@@ -16,7 +16,7 @@ const variants = {
     x: 0,
     opacity: 1
   },
-  exit: (direction) => {
+  exit: () => {
     return {
       zIndex: 0,
       opacity: 0
@@ -25,10 +25,7 @@ const variants = {
 };
 
 
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset, velocity) => {
-  return Math.abs(offset) * velocity;
-};
+
 
 export const Carrousel = ({images}) => {
   const [[page, direction], setPage] = useState([0, 0]);

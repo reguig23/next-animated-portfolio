@@ -4,11 +4,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 const Homepage = () => {
   return (
-    <motion.div
+    <div
+   
       className="h-full "
-      initial={{ y: "-200vh" }}
-      animate={{ y: "0%" }}
-      transition={{ duration: 1 }}
+     
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg;px-20 xl:px-48">
         {/* IMAGE CONTAINER */}
@@ -16,11 +15,13 @@ const Homepage = () => {
 
         {/* TEXT CONTAINER */}
         <motion.div
-          initial={{ x: "-200vw", opacity: 0 }}
+           mode = {"wait"}
+          initial={{ x: "-95%", opacity: 0 }}
           animate={{ x: "0px", opacity: 1 }}
+          end ={{x : "0px",opacity : 1}}
           transition={{
-            x: { duration: 2.4, ease: "easeInOut" }, // Animation du déplacement
-            opacity: { duration: 2.8, ease: "easeIn" }, // Opacité plus lente
+            x: { duration: 1.7, ease: "easeInOut" }, // Animation du déplacement
+            opacity: { duration: 2.1, ease: "easeIn"}, // Opacité plus lente
           }}
           className="h-1/2 flex flex-col lg:h-full lg:w-1/2 gap-8 items-end justify-center"
         >
@@ -51,7 +52,7 @@ const Homepage = () => {
           </div>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

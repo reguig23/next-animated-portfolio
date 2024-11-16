@@ -9,7 +9,7 @@ const NavLink = ({link})=>{
     console.log(pathName)
 
     return(
-        <Link className={ `rounded p-1 font-raleway ${pathName===link.url && "bg-primary font-raleway text-white "}`} href={link.url}>{link.title}</Link>
+        <Link className={ `rounded p-1 font-raleway ${pathName===link.url && "bg-primary  text-white "}`} href={link.url}>{link.title}</Link>
     )
 }
 
