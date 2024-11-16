@@ -25,7 +25,7 @@ const AboutPage = () => {
           {/* BIOGRAPHY TITLE */}
           <h1 className="font-bold text-2xl font-title">Qui je suis ? </h1>
           {/* BIOGRAPHY DESC */}
-          <p className="text-lg text-bleuFonce font-sans">
+          <p className="text-lg text-black font-sans">
             Développeur Full Stack spécialisé en Java, React et Node.js, avec
             une solide expérience en Docker et Kubernetes pour le déploiement.
             Passionné par l&#39;innovation en UX/UI design, j&#39;allie

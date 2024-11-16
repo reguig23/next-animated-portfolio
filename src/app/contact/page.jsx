@@ -38,7 +38,7 @@ const ContactPage = () => {
       Discutons ensemble !!
     </h2>
     <div className="h-auto flex justify-center items-center">
-      <p className="w-full text-justify text-base font-sans md:w-[80%] md:text-2xl text-black">
+      <p className="w-full text-justify text-lg font-sans md:w-[80%]  text-black">
         Merci de visiter mon portfolio. Je suis actuellement à la recherche de
         nouvelles opportunités professionnelles dans le domaine du
         développement, de la recherche ou de la technologie. Si vous êtes

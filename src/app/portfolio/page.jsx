@@ -43,7 +43,7 @@ const PortfolioPage = () => {
                 }}
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-2xl"></div>
-                <h2 className="relative font-semibold text-xl md:text-2xl lg:text-3xl font-raleway text-gray-100 p-4 z-[4]">
+                <h2 className="relative font-semibold text-lg lg:text-3xl font-raleway text-gray-100 p-4 z-[4]">
                   {experience.Name}
                 </h2>
               </div>
