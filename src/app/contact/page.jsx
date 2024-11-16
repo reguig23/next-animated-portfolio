@@ -33,11 +33,11 @@ const ContactPage = () => {
     >
       <div className="h-[95%]   md:h-[95%] w-[95%] md:bg-jaunePale md:rounded-md md:bg-opacity-90 p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col md:flex-row gap-24 md:gap-20 lg:gap-32  lg:pr-0 overflow-y-auto ">
   {/* Texte : Visible sur tous les écrans */}
-  <div className="w-full md:w-[50%] h-auto flex flex-col gap-36 items-center px-4 md:px-8 py-6 md:border-r-2 md:border-gray-500">
+  <div className="w-full  h-full flex flex-col gap-12  px-4 md:px-8 py-6 md:border-r-2  md:border-gray-500">
     <h2 className="text-2xl md:text-4xl font-semibold font-title text-center text-gray-800">
       Discutons ensemble !!
     </h2>
-    <div className="h-auto flex justify-center items-center">
+    <div className="h-auto flex justify-center">
       <p className="w-full text-justify text-lg font-sans md:w-[80%]  text-black">
         Merci de visiter mon portfolio. Je suis actuellement à la recherche de
         nouvelles opportunités professionnelles dans le domaine du
