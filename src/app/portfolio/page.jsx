@@ -22,25 +22,20 @@ const PortfolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="w-[95%] h-[95%] lg:bg-jaunePale lg:rounded-md lg:shadow-md lg:bg-opacity-90 p-5 mt-10 flex flex-col justify-center gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
+      <div className="w-[95%] h-[95%] lg:rounded-md lg:shadow-md justify-center p-5 mt-10 flex flex-col items-center  gap-3 md:gap-16 md:flex-wrap md:flex-row overflow-auto">
         
             {experiences.map((experience) => (
               <div
                 key={experience.id}
                 layoutId={experience.id}
-                className="w-full md:w-1/2 lg:w-1/4 h-40 md:h-56 lg:h-72 flex flex-col justify-end rounded-2xl overflow-hidden shadow-lg m-2 relative"
+                className="w-full md:w-1/2 lg:w-1/5 h-40 md:h-56  lg:h-72 flex flex-col justify-end rounded-2xl overflow-hidden shadow-lg m-2 relative"
                 style={{
                   backgroundImage: `url(${experience.backgroundImg})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
                 onClick={() => setSelectedId(experience.id)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  opacity: { duration: 0.6, ease: "easeInOut" }, // Animation d'opacité
-                }}
+                
               >
                 <div className="absolute inset-0 bg-black/40 backdrop-blur-md rounded-2xl"></div>
                 <h2 className="relative font-semibold text-lg lg:text-3xl font-raleway text-gray-100 p-4 z-[4]">
@@ -65,7 +60,7 @@ const PortfolioPage = () => {
             >
               {/* Header */}
               <div className="flex items-center justify-between w-full mb-4">
-                <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 text-center font-title flex-grow">
+                <h2 className="text-2xl md:text-4xl font-semibold text-gray-700 text-center font-title flex-grow">
                   {expSelect.Name}
                 </h2>
                 <button
@@ -78,7 +73,7 @@ const PortfolioPage = () => {
 
               {/* Citation */}
               <div className="w-full h-auto justify-center items-center mb-4">
-                <p className="text-center font-bold font-sans text-slate-700">
+                <p className="text-center text-xl md:text-2xl  font-sans font-semibold text-gray-700 ">
                   &#34;{expSelect.MyFeedBack}&#34;
                 </p>
               </div>
@@ -87,25 +82,25 @@ const PortfolioPage = () => {
               <div className="flex flex-col gap-4 flex-grow overflow-y-auto">
                 {/* Info */}
                 <div className="mb-4">
-                  <h5 className="text-lg md:text-xl font-title font-semibold text-gray-700 mb-2">
+                  <h5 className="text-lg md:text-[22px] font-title font-semibold text-gray-700 mb-2">
                     Informations
                   </h5>
-                  <div className="text-gray-600 text-sm font-sans md:text-base">
+                  <div className="text-gray-600 text-sm font-sans text-[16px]">
                     <ul className="list-disc list-inside">
-                      <li>
+                      <li className="text-[16px]" >
                         <strong>Rôle :</strong> {expSelect.role}
                       </li>
-                      <li>
+                      <li >
                         <strong>Entreprise :</strong> {expSelect.CompanyName}
                       </li>
-                      <li>
+                      <li >
                         <strong>Durée :</strong> {expSelect.durée}
                       </li>
-                      <li>
+                      <li >
                         <strong>Technologies :</strong> {expSelect.techno}
                       </li>
                       {expSelect.lienArticles.length > 0 && (
-                        <li>
+                        <li >
                           <strong>Article(s) de mes travaux :</strong>{" "}
                           {expSelect.lienArticles.map((article, index) => (
                             <a
@@ -127,13 +122,13 @@ const PortfolioPage = () => {
 
                 {/* Missions */}
                 <div className="mb-4">
-                  <h5 className="text-lg md:text-xl  font-title font-semibold text-gray-700 mb-2">
+                  <h5 className="text-[20px] md:text-[22px]  font-title font-semibold text-gray-700 mb-2">
                     Missions
                   </h5>
-                  <div className="text-gray-600 text-sm md:text-base">
+                  <div className="text-gray-600 text-[16px]">
                     <ul className="list-disc list-inside space-y-1">
                       {expSelect.missions.map((mission, index) => (
-                        <li key={index} className="font-sans ">{mission}</li>
+                        <li key={index} className="font-sans text-[16px]">{mission}</li>
                       ))}
                     </ul>
                   </div>
@@ -141,11 +136,11 @@ const PortfolioPage = () => {
                 
                 {/* Photos */}
                 <div className="flex flex-col gap-4 h-[70vh]">
-                  <h5 className="text-lg md:text-xl font-title font-semibold text-gray-700">
+                  <h5 className="text-lg md:text-[22px] font-title font-semibold text-gray-700">
                     Photos
                   </h5>
                   {expSelect.isConfidentiel && (
-                    <motion.div className="w-full h-full flex items-center font-sans justify-center  text-gray-500 italic text-center rounded-lg p-4">
+                    <motion.div className="w-full h-full flex items-center text-[16px] font-sans justify-center  text-gray-500 italic text-center rounded-lg p-4">
                       &#34;Ce projet est soumis à des restrictions de
                       confidentialité, je ne peux donc pas en partager les
                       images.&#34;

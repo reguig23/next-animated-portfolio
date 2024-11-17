@@ -23,9 +23,9 @@ const AboutPage = () => {
         {/* BIOGRAPHY CONTAINER */}
         <div className="flex flex-col gap-12 justify-center ">
           {/* BIOGRAPHY TITLE */}
-          <h1 className="font-bold text-2xl font-title">Qui je suis ? </h1>
+          <h1 className="font-semibold text-2xl md:text-4xl font-title">Qui je suis ? </h1>
           {/* BIOGRAPHY DESC */}
-          <p className="text-lg text-black font-sans">
+          <p className="text-lg md:text-2xl text-black font-sans">
             Développeur Full Stack spécialisé en Java, React et Node.js, avec
             une solide expérience en Docker et Kubernetes pour le déploiement.
             Passionné par l&#39;innovation en UX/UI design, j&#39;allie
@@ -34,12 +34,12 @@ const AboutPage = () => {
             engagement pour des solutions performantes et centrées utilisateur.
           </p>
           {/* BIOGRAPHY QUOTE */}
-          <span className="italic">
+          <span className="italic text-sm md:text-xl">
             Merci pour la visite de mon site Voici mon{" "}
             <a
               href={"/pdf/Ilyes Reguig developpeur fullstack.pdf"}
               download="Reguig_Ilyes_CV.pdf"
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline font-bold"
             >
               cv
             </a>
@@ -47,11 +47,11 @@ const AboutPage = () => {
         </div>
         {/* SKILLS CONTAINER */}
         <div
-          className="flex flex-col gap-3 justify-center p-0 m-0"
+          className="flex flex-col gap-9 justify-center p-0 m-0"
           ref={skillRef}
         >
           {/* SKILL TITLE */}
-          <h1 className="font-bold text-2xl font-title ">Compétences</h1>
+          <h1 className="font-semibold text-2xl md:text-4xl font-title ">Compétences</h1>
 
           {/* SKILL LIST */}
           <div className="flex flex-col gap-3 md:gap-16 md:flex-wrap justify-center items-center md:flex-row">

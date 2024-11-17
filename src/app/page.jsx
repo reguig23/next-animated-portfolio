@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 const Homepage = () => {
   return (
-    <div
-   
+    <motion.div
       className="h-full "
-     
+      initial={{ y: "-200vh" }}
+      animate={{ y: "0%" }}
+      transition={{ duration: 1 }}
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg;px-20 xl:px-48">
         {/* IMAGE CONTAINER */}
@@ -15,22 +16,15 @@ const Homepage = () => {
 
         {/* TEXT CONTAINER */}
         <motion.div
-           mode = {"wait"}
-          initial={{ x: "-95%", opacity: 0 }}
-          animate={{ x: "0px", opacity: 1 }}
-          end ={{x : "0px",opacity : 1}}
-          transition={{
-            x: { duration: 1.7, ease: "easeInOut" }, // Animation du déplacement
-            opacity: { duration: 2.1, ease: "easeIn"}, // Opacité plus lente
-          }}
+          
           className="h-1/2 flex flex-col lg:h-full lg:w-1/2 gap-8 items-end justify-center"
         >
           {/* TITLE */}
-          <h1 className="text-4xl md:text-6xl font-title font-bold text-right  ">
+          <h1 className="text-4xl md:text-6xl font-title  text-right  ">
             Ilyes Reguig
           </h1>
           {/* DESC */}
-          <p className="md:text-xl text-center font-sans ">
+          <p className="text-2xl md:text-4xl text-end font-sans ">
             Bonjour et bienvenue ! Je m&#39;appelle Ilyes et je suis développeur
             spécialisé dans full-stack. Ici, vous trouverez une sélection de mes
             projets et mon parcours en développement.
@@ -52,7 +46,7 @@ const Homepage = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
