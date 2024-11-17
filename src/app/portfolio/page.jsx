@@ -60,7 +60,7 @@ const PortfolioPage = () => {
             >
               {/* Header */}
               <div className="flex items-center justify-between w-full mb-4">
-                <h2 className="text-2xl md:text-4xl font-semibold text-gray-700 text-center font-title flex-grow">
+                <h2 className="text-lg md:text-4xl font-semibold text-gray-700 text-center font-title flex-grow">
                   {expSelect.Name}
                 </h2>
                 <button
@@ -73,7 +73,7 @@ const PortfolioPage = () => {
 
               {/* Citation */}
               <div className="w-full h-auto justify-center items-center mb-4">
-                <p className="text-center text-xl md:text-2xl  font-sans font-semibold text-gray-700 ">
+                <p className="text-center text-sm md:text-2xl  font-sans font-semibold text-gray-700 ">
                   &#34;{expSelect.MyFeedBack}&#34;
                 </p>
               </div>
@@ -82,7 +82,7 @@ const PortfolioPage = () => {
               <div className="flex flex-col gap-4 flex-grow overflow-y-auto">
                 {/* Info */}
                 <div className="mb-4">
-                  <h5 className="text-lg md:text-[22px] font-title font-semibold text-gray-700 mb-2">
+                  <h5 className="text-base md:text-[22px] font-title font-semibold text-gray-700 mb-2">
                     Informations
                   </h5>
                   <div className="text-gray-600 text-sm font-sans text-[16px]">
@@ -122,7 +122,7 @@ const PortfolioPage = () => {
 
                 {/* Missions */}
                 <div className="mb-4">
-                  <h5 className="text-[20px] md:text-[22px]  font-title font-semibold text-gray-700 mb-2">
+                  <h5 className="text-base md:text-[22px]  font-title font-semibold text-gray-700 mb-2">
                     Missions
                   </h5>
                   <div className="text-gray-600 text-[16px]">
@@ -136,7 +136,7 @@ const PortfolioPage = () => {
                 
                 {/* Photos */}
                 <div className="flex flex-col gap-4 h-[70vh]">
-                  <h5 className="text-lg md:text-[22px] font-title font-semibold text-gray-700">
+                  <h5 className="text-base md:text-[22px] font-title font-semibold text-gray-700">
                     Photos
                   </h5>
                   {expSelect.isConfidentiel && (
